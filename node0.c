@@ -19,58 +19,59 @@ extern struct rtpkt {
 
 extern int TRACE;
 extern int YES;
-extern int NO;
+extern int NO; 
 
 struct distance_table 
 {
   int costs[4][4];
 } dt0;
 
+//instantiation of distance table, necessary structs, and the clock
 struct distance_table table;
+struct rtpkt send_to_1;
+struct rtpkt send_to_2;
+struct rtpkt send_to_3;
+float clocktime;
 
 /* students to write the following two routines, and maybe some others */
 
 void rtinit0() 
 {
-    //initialize distance table and necessary structs    
-    struct rtpkt send_to_1;
-    struct rtpkt send_to_2;
-    struct rtpkt send_to_3;
+    //timestamp
+    printf("rtinit0 called at: %d\n", clocktime);
     
     //initialize the distance table to reflect the direct costs to nodes
-    table.costs[0][0] = 0;
-    table.costs[0][1] = 1;
-    table.costs[0][2] = 7;
-    table.costs[0][3] = 3;
+    table.costs[NODE][0] = 0;
+    table.costs[NODE][1] = 1;
+    table.costs[NODE][2] = 3;
+    table.costs[NODE][3] = 7;
     
     //set minimum cost paths to all other directly-connected neighbor nodes 
-    send_to_1.sourceid = 0;
+    send_to_1.sourceid = NODE;
     send_to_1.destid = 1;
     send_to_1.mincost[0] = 0;
     send_to_1.mincost[1] = 1;
-    send_to_1.mincost[2] = 7;
-    send_to_1.mincost[3] = 3;
+    send_to_1.mincost[2] = 3;
+    send_to_1.mincost[3] = 7;
     
-    send_to_2.sourceid = 0;
+    send_to_2.sourceid = NODE;
     send_to_2.destid = 2;
     send_to_2.mincost[0] = 0;
     send_to_2.mincost[1] = 1;
-    send_to_2.mincost[2] = 7;
-    send_to_2.mincost[3] = 3;
+    send_to_2.mincost[2] = 3;
+    send_to_2.mincost[3] = 7;
     
-    send_to_3.sourceid = 0;
+    send_to_3.sourceid = NODE;
     send_to_3.destid = 3;
     send_to_3.mincost[0] = 0;
     send_to_3.mincost[1] = 1;
-    send_to_3.mincost[2] = 7;
-    send_to_3.mincost[3] = 3;
-    
+    send_to_3.mincost[2] = 3;
+    send_to_3.mincost[3] = 7;
     
     //send using using tolayer2()
     tolayer2(send_to_1);
     tolayer2(send_to_2);
     tolayer2(send_to_3); 
-    
     
 }
 
@@ -78,6 +79,9 @@ void rtinit0()
 void rtupdate0(rcvdpkt)
   struct rtpkt *rcvdpkt;
 {
+    //timestamp
+    printf("rtupdate0 called at: %d\n", clocktime);
+    
     int sourceid = rcvdpkt->sourceid;
     int destid = rcvdpkt->destid;
     int mincost[4];
@@ -94,7 +98,7 @@ void rtupdate0(rcvdpkt)
     int min = 0;
     for (j=0; j<4; j++) {
         
-        if (mincost[j] < 999){
+        if (mincost[j] != NULL && table.costs[NODE][sourceid]!=NULL){
             min = table.costs[NODE][sourceid] + mincost[j];
         
             if (min < table.costs[NODE][j]){
@@ -103,6 +107,39 @@ void rtupdate0(rcvdpkt)
             }
         }
     }
+    
+    if (didChange){
+        
+        send_to_1.sourceid = NODE;
+        send_to_1.destid = 1;
+        send_to_1.mincost[0] = table.costs[NODE][0]; 
+        send_to_1.mincost[1] = table.costs[NODE][1];
+        send_to_1.mincost[2] = table.costs[NODE][2];
+        send_to_1.mincost[3] = table.costs[NODE][3];
+        
+        send_to_2.sourceid = NODE;
+        send_to_2.destid = 2;
+        send_to_2.mincost[0] = table.costs[NODE][0]; 
+        send_to_2.mincost[1] = table.costs[NODE][1];
+        send_to_2.mincost[2] = table.costs[NODE][2];
+        send_to_2.mincost[3] = table.costs[NODE][3];
+        
+        send_to_3.sourceid = NODE;
+        send_to_3.destid = 3;
+        send_to_3.mincost[0] = table.costs[NODE][0]; 
+        send_to_3.mincost[1] = table.costs[NODE][1];
+        send_to_3.mincost[2] = table.costs[NODE][2];
+        send_to_3.mincost[3] = table.costs[NODE][3];
+        
+        tolayer2(send_to_1);
+        tolayer2(send_to_2);
+        tolayer2(send_to_3);
+    }
+    
+    
+   
+    
+    //Desired Output
     printf("The packet was sent from router #:%d\n", sourceid);
     
     if (didChange)
@@ -110,7 +147,8 @@ void rtupdate0(rcvdpkt)
     else
         printf("The table did NOT change\n");
     
-    printdt0(&table); 
+    printdt0(&table);
+    didChange = 0; 
 }
 
 printdt0(dtptr)
