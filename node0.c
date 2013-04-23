@@ -33,6 +33,7 @@ struct rtpkt send_to_2;
 struct rtpkt send_to_3;
 float clocktime;
 
+
 /* students to write the following two routines, and maybe some others */
 
 void rtinit0() 
@@ -166,7 +167,8 @@ printdt0(dtptr)
 	 dtptr->costs[3][2],dtptr->costs[3][3]);
 }
 
-linkhandler0(linkid, newcost)   
+
+linkhandler0(linkid, newcost)
   int linkid, newcost;
 
 /* called when cost from 0 to linkid changes from current value to newcost*/
@@ -175,5 +177,27 @@ linkhandler0(linkid, newcost)
 /* constant definition in prog3.c from 0 to 1 */
 	
 {
+    //timestamp
+    printf("rtlinkhandler0 called at: %d\n", clocktime);
+    
+    //update distance table
+    table.costs[NODE][linkid] = newcost;
+    
+    //send update routing packets to neighbor nodes
+    send_to_1.sourceid = NODE;
+    send_to_1.destid = 1;
+    send_to_1.mincost[linkid] = newcost;
+    
+    send_to_2.sourceid = NODE;
+    send_to_2.destid = 2;
+    send_to_2.mincost[linkid] = newcost;
+    
+    send_to_3.sourceid = NODE;
+    send_to_3.destid = 3;
+    send_to_3.mincost[linkid] = newcost;
+    
+    tolayer2(send_to_1);
+    tolayer2(send_to_2);
+    tolayer2(send_to_3);
 }
 

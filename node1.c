@@ -174,7 +174,7 @@ printdt1(dtptr)
 
 
 
-linkhandler1(linkid, newcost)   
+linkhandler1(linkid, newcost)
 int linkid, newcost;   
 /* called when cost from 1 to linkid changes from current value to newcost*/
 /* You can leave this routine empty if you're an undergrad. If you want */
@@ -182,6 +182,23 @@ int linkid, newcost;
 /* constant definition in prog3.c from 0 to 1 */
 	
 {
+    //timestamp
+    printf("rtlinkhandler1 called at: %d\n", clocktime);
+    
+    //update distance table
+    table.costs[NODE][linkid] = newcost;
+    
+    //send update routing packets to neighbor nodes
+    send_to_0.sourceid = NODE;
+    send_to_0.destid = 1;
+    send_to_0.mincost[linkid] = newcost;
+    
+    send_to_2.sourceid = NODE;
+    send_to_2.destid = 2;
+    send_to_2.mincost[linkid] = newcost;
+    
+    tolayer2(send_to_2);
+    tolayer2(send_to_3);
 }
 
 
