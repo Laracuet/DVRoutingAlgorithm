@@ -1,0 +1,405 @@
+tylers-mac:DVRoutingAlgorithm TylerLaracuente$ ./a.out
+Enter TRACE:2
+rtinit0 called at: 12747820
+rtinit1 called at: 30257284
+rtinit2 called at: 23348788
+rtinit3 called at: 19903048
+MAIN: rcv event, t=0.420, at 3 src: 0, dest: 3, contents:   0   1   3   7
+rtupdate3 called at: 1704792744
+The path [3][1] was updated from: 999 to: 8
+The packet was sent from router #:0
+The table did change
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    0     3
+dest 1|    1     1
+     2|    3     0
+MAIN: rcv event, t=0.689, at 3 src: 2, dest: 3, contents:   3   1   0   2
+rtupdate3 called at: 1704792744
+The path [3][0] was updated from: 7 to: 5
+The path [3][1] was updated from: 8 to: 3
+The packet was sent from router #:2
+The table did change
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    0     3
+dest 1|    1     1
+     2|    3     0
+MAIN: rcv event, t=0.697, at 1 src: 0, dest: 1, contents:   0   1   3   7
+rtupdate1 called at: 1704792744
+The packet was sent from router #:0
+The table did change
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    0     3
+dest 2|    3     0
+     3|    5     2
+MAIN: rcv event, t=0.980, at 0 src: 1, dest: 0, contents:   1   0   1 999
+rtupdate0 called at: 1704792744
+The packet was sent from router #:1
+The table did change
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    0     1     8
+dest 2|    1     0     2
+     3|    3     2     0
+MAIN: rcv event, t=1.270, at 2 src: 0, dest: 2, contents:   0   1   3   7
+rtupdate2 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     7
+dest 1|    1     0     8
+     3|    5     3     0
+MAIN: rcv event, t=1.532, at 1 src: 2, dest: 1, contents:   3   1   0   2
+rtupdate1 called at: 1704792744
+The packet was sent from router #:2
+The table did change
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 2|    3     0
+     3|    5     2
+MAIN: rcv event, t=2.007, at 2 src: 1, dest: 2, contents:   1   0   1 999
+rtupdate2 called at: 1704792744
+The packet was sent from router #:1
+The table did change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     7
+dest 1|    1     0     3
+     3|    5     3     0
+MAIN: rcv event, t=2.147, at 0 src: 2, dest: 0, contents:   3   1   0   2
+rtupdate0 called at: 1704792744
+The packet was sent from router #:2
+The table did change
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    0     1     3
+dest 2|    1     0     2
+     3|    3     2     0
+MAIN: rcv event, t=2.336, at 1 src: 0, dest: 1, contents:   0   1   2   7
+rtupdate1 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 2|    2     0
+     3|    5     2
+MAIN: rcv event, t=2.786, at 3 src: 0, dest: 3, contents:   0   1   2   7
+rtupdate3 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 1|    1     1
+     2|    2     0
+MAIN: rcv event, t=3.045, at 0 src: 3, dest: 0, contents:   7 999   2   0
+rtupdate0 called at: 1704792744
+The packet was sent from router #:3
+The table did NOT change
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    0     1     3
+dest 2|    1     0     2
+     3|    3     2     0
+MAIN: rcv event, t=3.485, at 1 src: 2, dest: 1, contents:   2   1   0   2
+rtupdate1 called at: 1704792744
+The packet was sent from router #:2
+The table did NOT change
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 2|    2     0
+     3|    5     2
+MAIN: rcv event, t=3.488, at 1 src: 0, dest: 1, contents:   0   1   2   4
+rtupdate1 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 2|    2     0
+     3|    5     2
+MAIN: rcv event, t=3.613, at 2 src: 3, dest: 2, contents:   7 999   1   0
+rtupdate2 called at: 1704792744
+The packet was sent from router #:3
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     4
+dest 1|    1     0     3
+     3|    5     3     0
+MAIN: rcv event, t=4.725, at 3 src: 2, dest: 3, contents:   2   1   0   2
+rtupdate3 called at: 1704792744
+The path [3][0] was updated from: 5 to: 4
+The packet was sent from router #:2
+The table did change
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 1|    1     1
+     2|    2     0
+MAIN: rcv event, t=4.940, at 0 src: 3, dest: 0, contents:   7   8   2   0
+rtupdate0 called at: 1704792744
+The packet was sent from router #:3
+The table did NOT change
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    0     1     3
+dest 2|    1     0     2
+     3|    3     2     0
+MAIN: rcv event, t=5.234, at 2 src: 3, dest: 2, contents:   7   8   2   0
+rtupdate2 called at: 1704792744
+The packet was sent from router #:3
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     4
+dest 1|    1     0     3
+     3|    4     3     0
+MAIN: rcv event, t=5.264, at 0 src: 3, dest: 0, contents:   5   3   2   0
+rtupdate0 called at: 1704792744
+The packet was sent from router #:3
+The table did NOT change
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    0     1     3
+dest 2|    1     0     2
+     3|    3     2     0
+MAIN: rcv event, t=6.173, at 3 src: 0, dest: 3, contents:   0   1   2   4
+rtupdate3 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 1|    1     1
+     2|    2     0
+MAIN: rcv event, t=6.887, at 0 src: 1, dest: 0, contents:   1   0   1   8
+rtupdate0 called at: 1704792744
+The packet was sent from router #:1
+The table did NOT change
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    0     1     3
+dest 2|    1     0     2
+     3|    3     2     0
+MAIN: rcv event, t=6.921, at 0 src: 1, dest: 0, contents:   1   0   1   3
+rtupdate0 called at: 1704792744
+The packet was sent from router #:1
+The table did NOT change
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    0     1     3
+dest 2|    1     0     2
+     3|    3     2     0
+MAIN: rcv event, t=7.168, at 2 src: 3, dest: 2, contents:   5   3   2   0
+rtupdate2 called at: 1704792744
+The packet was sent from router #:3
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     4
+dest 1|    1     0     3
+     3|    4     3     0
+MAIN: rcv event, t=8.244, at 0 src: 2, dest: 0, contents:   2   1   0   2
+rtupdate0 called at: 1704792744
+The packet was sent from router #:2
+The table did NOT change
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    0     1     3
+dest 2|    1     0     2
+     3|    3     2     0
+MAIN: rcv event, t=9.069, at 2 src: 1, dest: 2, contents:   1   0   1   8
+rtupdate2 called at: 1704792744
+The packet was sent from router #:1
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     4
+dest 1|    1     0     3
+     3|    4     3     0
+MAIN: rcv event, t=9.320, at 0 src: 3, dest: 0, contents:   4   3   2   0
+rtupdate0 called at: 1704792744
+The packet was sent from router #:3
+The table did NOT change
+                via     
+   D0 |    1     2    3 
+  ----|-----------------
+     1|    0     1     3
+dest 2|    1     0     2
+     3|    3     2     0
+MAIN: rcv event, t=11.022, at 2 src: 0, dest: 2, contents:   0   1   2   7
+rtupdate2 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     4
+dest 1|    1     0     3
+     3|    4     3     0
+MAIN: rcv event, t=12.792, at 2 src: 1, dest: 2, contents:   1   0   1   3
+rtupdate2 called at: 1704792744
+The packet was sent from router #:1
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     4
+dest 1|    1     0     3
+     3|    4     3     0
+MAIN: rcv event, t=13.977, at 2 src: 0, dest: 2, contents:   0   1   2   4
+rtupdate2 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     4
+dest 1|    1     0     3
+     3|    4     3     0
+MAIN: rcv event, t=15.855, at 2 src: 3, dest: 2, contents:   4   3   2   0
+rtupdate2 called at: 1704792744
+The packet was sent from router #:3
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     4
+dest 1|    1     0     3
+     3|    4     3     0
+MAIN: rcv event, t=10000.000, at -1rtlinkhandler0 called at: 20
+rtlinkhandler1 called at: 20
+MAIN: rcv event, t=10000.048, at 3 src: 0, dest: 3, contents:   0  20   2   4
+rtupdate3 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 1|   20     1
+     2|    2     0
+MAIN: rcv event, t=10001.148, at 3 src: 0, dest: 3, contents:   0  20   2   4
+rtupdate3 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 1|   20     1
+     2|    2     0
+MAIN: rcv event, t=10001.306, at 1 src: 0, dest: 1, contents:   4  20   2   0
+rtupdate1 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 2|    2     0
+     3|    4     2
+MAIN: rcv event, t=10001.589, at 2 src: 0, dest: 2, contents:   4  20   2   0
+rtupdate2 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0    20     4
+dest 1|   20     0     3
+     3|    4     3     0
+MAIN: rcv event, t=10003.423, at 2 src: 1, dest: 2, contents:  20  20   2   0
+rtupdate2 called at: 1704792744
+The packet was sent from router #:1
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0    20     4
+dest 1|   20     0     3
+     3|    4     3     0
+MAIN: rcv event, t=20000.000, at 0rtlinkhandler0 called at: 1
+rtlinkhandler1 called at: 1
+MAIN: rcv event, t=20000.006, at 3 src: 0, dest: 3, contents:   0   1   2   4
+rtupdate3 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 1|    1     1
+     2|    2     0
+MAIN: rcv event, t=20000.404, at 1 src: 0, dest: 1, contents:   4   1   2   0
+rtupdate1 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+             via   
+   D1 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 2|    2     0
+     3|    4     2
+MAIN: rcv event, t=20001.268, at 3 src: 0, dest: 3, contents:   0   1   2   4
+rtupdate3 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+             via     
+   D3 |    0     2 
+  ----|-----------
+     0|    0     2
+dest 1|    1     1
+     2|    2     0
+MAIN: rcv event, t=20001.994, at 2 src: 0, dest: 2, contents:  20   1   2   0
+rtupdate2 called at: 1704792744
+The packet was sent from router #:0
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     4
+dest 1|    1     0     3
+     3|    4     3     0
+MAIN: rcv event, t=20003.244, at 2 src: 1, dest: 2, contents:   1   1   2   0
+rtupdate2 called at: 1704792744
+The packet was sent from router #:1
+The table did NOT change
+                via     
+   D2 |    0     1    3 
+  ----|-----------------
+     0|    0     1     4
+dest 1|    1     0     3
+     3|    4     3     0
+
